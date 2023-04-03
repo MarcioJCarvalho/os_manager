@@ -14,3 +14,6 @@ Um aplicativo para ordens de serviço é uma ferramenta digital projetada para a
 - Gerenciamento de estoque: o aplicativo pode ter um módulo para gerenciamento de estoque, permitindo que o usuário acompanhe os materiais e peças utilizados nas ordens de serviço e faça o controle de estoque.
 
 - Relatórios e análises: o aplicativo pode gerar relatórios e análises para ajudar a empresa a entender melhor o desempenho do serviço prestado, identificar áreas de melhoria e tomar decisões informadas.
+
+___
+Made with :blue_heart: by MÁRCIO :wave: [See my LinkedIn](https://www.linkedin.com/in/marciojcarvalho/)
