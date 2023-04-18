@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:os_manager/rotas.dart';
 
 class Login extends StatelessWidget {
-  const Login({super.key});
+  const Login({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

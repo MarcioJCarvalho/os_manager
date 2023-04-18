@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TecnicoLista extends StatelessWidget {
-  const TecnicoLista({super.key});
+  const TecnicoLista({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

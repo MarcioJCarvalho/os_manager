@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ClienteLista extends StatelessWidget{
-  const ClienteLista({super.key});
+  const ClienteLista({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

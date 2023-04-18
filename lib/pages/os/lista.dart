@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class OsLista extends StatelessWidget {
-  const OsLista({super.key});
+  const OsLista({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

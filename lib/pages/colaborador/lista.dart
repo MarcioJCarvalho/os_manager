@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ColaboradorLista extends StatelessWidget {
-  const ColaboradorLista({super.key});
+  const ColaboradorLista({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

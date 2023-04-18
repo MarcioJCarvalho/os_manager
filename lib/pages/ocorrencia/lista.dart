@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class OcorrenciaLista extends StatelessWidget {
-  const OcorrenciaLista({super.key});
+  const OcorrenciaLista({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

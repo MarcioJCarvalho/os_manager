@@ -10,7 +10,7 @@ import 'package:os_manager/pages/splash.dart';
 import 'package:os_manager/pages/tecnico/lista.dart';
 
 class App extends StatelessWidget {
-  const App({super.key});
+  const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
