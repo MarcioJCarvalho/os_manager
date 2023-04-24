@@ -1,22 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:os_manager/pages/cliente/lista.dart';
 import 'package:os_manager/pages/colaborador/lista.dart';
 import 'package:os_manager/pages/equipamento/lista.dart';
-import 'package:os_manager/pages/home.dart';
+import 'package:os_manager/pages/home/home.dart';
 import 'package:os_manager/pages/login.dart';
 import 'package:os_manager/pages/ocorrencia/lista.dart';
 import 'package:os_manager/pages/os/lista.dart';
 import 'package:os_manager/pages/splash.dart';
 import 'package:os_manager/pages/tecnico/lista.dart';
+import 'package:os_manager/utils/colors.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+          // para Android e IOS
+          statusBarColor: primaryColor,
+          statusBarIconBrightness: Brightness.dark,
+          statusBarBrightness: Brightness.dark,
+          systemNavigationBarColor: primaryColor,
+          systemNavigationBarIconBrightness: Brightness.dark),
+    );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Os Manager',
+      theme: ThemeData(primarySwatch: blueSwatch),
       routes: {
         "/": (context) => const Splash(),
         "home": (context) => const Home(),
