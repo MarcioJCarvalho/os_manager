@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:os_manager/menu.dart';
 import 'package:os_manager/pages/home/home_content.dart';
+import 'package:os_manager/utils/colors.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -10,10 +12,17 @@ class Home extends StatelessWidget {
     return LayoutBuilder(builder: (context, constraints) {
       final bool isMobile = constraints.maxWidth < 600;
       return Scaffold(
-        // appBar: AppBar(
-        //   automaticallyImplyLeading: isMobile,
-        //   title: const Text('Home'),
-        // ),
+        appBar: AppBar(
+          centerTitle: isMobile,
+          backgroundColor: primaryColor,
+          automaticallyImplyLeading: isMobile,
+          // logo
+          title: const Text('Os Manager'),
+          actions: [
+            Icon(Ionicons.notifications_outline),
+             Badge(),
+          ],
+        ),
         drawer: const Menu(),
         body: isMobile
             ? const HomeContent()
@@ -26,13 +35,4 @@ class Home extends StatelessWidget {
       );
     });
   }
-
-  // PreferredSize _appBar() {
-  //   return PreferredSize(
-  //       child: AppBar(
-  //         automaticallyImplyLeading: isMobile,
-  //         title: const Text('Home'),
-  //       ), 
-  //       preferredSize: const Size.fromHeight(0));
-  // }
 }

@@ -15,6 +15,9 @@ class Menu extends StatelessWidget {
             currentAccountPicture: CircleAvatar(
               child: Text("SZ"),
             ),
+            decoration: const BoxDecoration(
+              color: Color(0xFF0C5DBE),
+            ),
           ),
           ListTile(
             leading: Icon(Icons.person),
