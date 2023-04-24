@@ -1,4 +1,4 @@
-# Os Manager
+# OS Manager
 Um aplicativo para ordens de serviço é uma ferramenta digital projetada para ajudar empresas a gerenciar e controlar o processo de criação, acompanhamento e fechamento de ordens de serviço de forma mais eficiente e organizada. Esse tipo de aplicativo geralmente é usado por empresas que oferecem serviços de manutenção, reparo, instalação ou suporte técnico, como empresas de ar condicionado, eletricistas, encanadores, empresas de informática, entre outras.
 
 ## Entre as principais funcionalidades de um aplicativo para ordens de serviço estão:

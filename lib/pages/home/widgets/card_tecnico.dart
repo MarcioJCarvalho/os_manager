@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class CardTecnico extends StatelessWidget {
@@ -14,20 +13,29 @@ class CardTecnico extends StatelessWidget {
             Card(
               color: Colors.grey[100],
               child: Container(
+                height: 140,
+                width: 140,
                 padding: EdgeInsets.all(10),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Text(
                         "6",
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 80,
+                        ),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(fontSize: 80),
                       ),
                       Text(
-                        "Técnicos em serviço",
-                        style: TextStyle(fontSize: 14),
-                      )                      
+                        "Técnicos ativos",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontFamily: 'Montserrat',
+                        ),
+                      )
                     ]),
               ),
             ),

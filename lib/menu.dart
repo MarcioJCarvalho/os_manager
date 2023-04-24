@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:os_manager/rotas.dart';
+import 'package:os_manager/utils/colors.dart';
 
 class Menu extends StatelessWidget {
   const Menu({Key? key}) : super(key: key);
@@ -10,34 +12,36 @@ class Menu extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           UserAccountsDrawerHeader(
-            accountEmail: Text("user@mail.com"),
-            accountName: Text("Seu zé"),
+            accountEmail: Text("consinha_amarelo@email.com"),
+            accountName: Text("Mc Champinho"),
             currentAccountPicture: CircleAvatar(
-              child: Text("SZ"),
+              backgroundImage: NetworkImage(
+                'https://pbs.twimg.com/profile_images/2456322047/004XJm-y7WR-_-mc-champions-e-gu-do-vaz-de-lima-pode-vi_400x400.jpg'
+              ),
             ),
             decoration: const BoxDecoration(
               color: Color(0xFF0C5DBE),
             ),
           ),
           ListTile(
-            leading: Icon(Icons.person),
-            title: Text("Clientes"),
+            leading: const Icon(LineIcons.user),
+            title: const Text("Clientes"),
             onTap: () {
               Navigator.pushNamed(context, Rotas.CLIENTE_LISTA);
               //Navegar para outra página
             },
           ),
           ListTile(
-            leading: Icon(Icons.person),
-            title: Text("Tecnicos"),
+            leading: const Icon(LineIcons.hardHat),
+            title: const Text("Tecnicos"),
             onTap: () {
               Navigator.pushNamed(context, Rotas.TECNICO_LISTA);
               //Navegar para outra página
             },
           ),
           ListTile(
-            leading: Icon(Icons.person),
-            title: Text("Colaboradores"),
+            leading: const Icon(LineIcons.userTie),
+            title: const Text("Colaboradores"),
             onTap: () {
               Navigator.pushNamed(context, Rotas.COLABORADOR_LISTA);
               //Navegar para outra página

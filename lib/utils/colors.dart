@@ -5,6 +5,7 @@ Color secundaryColor = const Color.fromARGB(255, 79, 136, 244);
 Color grayColor = const Color.fromRGBO(242, 247, 250, 1);
 Color greyText = const Color.fromRGBO(27, 27, 27, 1);
 Color backgroundColor = const Color.fromARGB(255, 79, 136, 244);
+Color dangerColor = const Color.fromARGB(255, 238, 85, 85);
 LinearGradient backgroundGradient = const LinearGradient(
     begin: Alignment.bottomCenter,
     end: Alignment.topCenter,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ionicons/ionicons.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:os_manager/pages/home/widgets/card_os.dart';
 import 'package:os_manager/pages/home/widgets/card_tecnico.dart';
 import 'package:os_manager/utils/colors.dart';
@@ -10,11 +10,11 @@ class HomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: backgroundColor,
+      backgroundColor: grayColor,
       body: SingleChildScrollView(
         child: Container(
-          // color: Colors.white,
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CardOs(),
               CardTecnico(),
@@ -22,14 +22,20 @@ class HomeContent extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        hoverColor: secundaryColor,
-        onPressed: () {
-          // Add your onPressed code here!
-        },
-        backgroundColor: primaryColor,
-        child: const Icon(Ionicons.add),
-      ),
+      floatingActionButton: _actionButton(),
     );
   }
+
+  FloatingActionButton _actionButton(){
+    return FloatingActionButton(
+        hoverColor: secundaryColor,
+        tooltip: "Criar nova OS",
+        onPressed: () {
+          // Navegar para cadastro de OS
+        },
+        backgroundColor: primaryColor,
+        child: const Icon(LineIcons.medicalNotes),
+      );
+  }
+
 }

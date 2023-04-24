@@ -1,0 +1,16 @@
+# Referencias
+## Sobre Fonts
+https://www.treinaweb.com.br/blog/configurando-fontes-em-projetos-flutter#:~:text=O%20primeiro%20passo%20para%20utilizar,%2C%20imagens%2C%20%C3%A1udios%2C%20etc.
+<acessado em (24/04/2023 - 16:27)>
+
+Sans-serif: fontes sem serifa, como Arial, Helvetica, e Open Sans, são frequentemente usadas em aplicativos modernos e limpos, pois oferecem uma aparência limpa e minimalista.
+
+Serif: fontes com serifa, como Times New Roman, Georgia, e Baskerville, são frequentemente usadas em aplicativos que buscam uma aparência mais formal e tradicional.
+
+Monospace: fontes de espaço fixo, como Courier, Consolas e Lucida Console, são frequentemente usadas em aplicativos que precisam exibir informações em tabelas ou listas, pois cada caractere tem a mesma largura, tornando mais fácil alinhar colunas.
+
+Display: fontes de exibição, como Brush Script e Lobster, são frequentemente usadas em títulos e cabeçalhos para criar uma aparência mais chamativa e única.
+
+Script: fontes de script, como Pacifico e Edwardian Script, são frequentemente usadas para criar uma aparência mais sofisticada e elegante, mas podem ser difíceis de ler em tamanhos menores ou em telas menores.
+
+Condensed: fontes condensadas, como Bebas Neue e Oswald, são frequentemente usadas em títulos e cabeçalhos para economizar espaço e criar uma aparência mais compacta.
