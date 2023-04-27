@@ -1,13 +1,12 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:os_manager/menu.dart';
-import 'package:os_manager/pages/home/home_content.dart';
+import 'package:os_manager/pages/cliente/cliente_lista_content.dart';
 import 'package:os_manager/utils/colors.dart';
-import 'package:badges/badges.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
-
+class ClienteLista extends StatelessWidget {
+  const ClienteLista({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
@@ -47,11 +46,11 @@ class Home extends StatelessWidget {
             ]),
         drawer: const Menu(),
         body: isMobile
-            ? const HomeContent()
+            ? const ClienteListaContent()
             : Row(
                 children: const <Widget>[
                   Menu(),
-                  Expanded(child: HomeContent()),
+                  Expanded(child: ClienteListaContent()),
                 ],
               ),
       );

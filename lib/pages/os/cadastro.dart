@@ -2,11 +2,11 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:os_manager/menu.dart';
-import 'package:os_manager/pages/os/cadastro_content.dart';
+import 'package:os_manager/pages/os/os_cadastro_content.dart';
 import 'package:os_manager/utils/colors.dart';
 
-class Cadastro extends StatelessWidget {
-  const Cadastro({ Key? key }) : super(key: key);
+class CadastroOS extends StatelessWidget {
+  const CadastroOS({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,11 +47,11 @@ class Cadastro extends StatelessWidget {
             ]),
         drawer: const Menu(),
         body: isMobile
-            ? const CadastroContent()
+            ? const OsCadastroContent()
             : Row(
                 children: const <Widget>[
                   Menu(),
-                  Expanded(child: CadastroContent()),
+                  Expanded(child: OsCadastroContent()),
                 ],
               ),
       );

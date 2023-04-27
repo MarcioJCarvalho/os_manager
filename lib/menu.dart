@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:os_manager/rotas.dart';
-import 'package:os_manager/utils/colors.dart';
 
 class Menu extends StatelessWidget {
   const Menu({Key? key}) : super(key: key);
@@ -21,6 +20,14 @@ class Menu extends StatelessWidget {
             decoration: const BoxDecoration(
               color: Color(0xFF0C5DBE),
             ),
+          ),
+          ListTile(
+            leading: const Icon(LineIcons.home),
+            title: const Text("Home"),
+            onTap: () {
+              Navigator.pushNamed(context, Rotas.HOME);
+              //Navegar para outra página
+            },
           ),
           ListTile(
             leading: const Icon(LineIcons.user),

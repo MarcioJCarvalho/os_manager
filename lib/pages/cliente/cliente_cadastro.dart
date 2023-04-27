@@ -1,12 +1,12 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:os_manager/menu.dart';
-import 'package:os_manager/pages/home/home_content.dart';
+import 'package:os_manager/pages/cliente/cadastro_content.dart';
 import 'package:os_manager/utils/colors.dart';
-import 'package:badges/badges.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class ClienteCadastro extends StatelessWidget {
+  const ClienteCadastro({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
                 child: Stack(
                   children: [
                     Center(
-                      child: SizedBox(
+                      child: Container(
                           width: 20,
                           child: Badge(
                             showBadge: true,
@@ -47,11 +47,11 @@ class Home extends StatelessWidget {
             ]),
         drawer: const Menu(),
         body: isMobile
-            ? const HomeContent()
+            ? const CadastrContent()
             : Row(
                 children: const <Widget>[
                   Menu(),
-                  Expanded(child: HomeContent()),
+                  Expanded(child: CadastrContent()),
                 ],
               ),
       );

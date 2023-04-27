@@ -11,7 +11,7 @@ class CardOs extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Card(
-              color: Colors.grey[100],
+              color: Colors.white,
               child: Container(
                 height: 145,
                 width: 145,

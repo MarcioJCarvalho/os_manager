@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:os_manager/pages/os/widgets/form.dart';
+import 'package:os_manager/pages/cliente/widgets/form_cliente.dart';
 import 'package:os_manager/utils/colors.dart';
 
-class CadastroContent extends StatelessWidget {
-  const CadastroContent({Key? key}) : super(key: key);
+class CadastrContent extends StatelessWidget {
+  const CadastrContent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class CadastroContent extends StatelessWidget {
               children: [
                 Padding(padding: const EdgeInsets.only(top: 35)),
                 Text(
-                  "Cadastro de Ordens de Serviço",
+                  "Cadastro de Clientes",
                   style: TextStyle(
                     fontSize: 16,
                     fontFamily: 'Montserrat',
@@ -31,7 +31,7 @@ class CadastroContent extends StatelessWidget {
             Expanded(
                 child: Row(
               children: [
-                Expanded(child: Formulario()),
+                Expanded(child: FormCliente()),
               ],
             )),
           ],
