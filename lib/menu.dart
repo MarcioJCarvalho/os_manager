@@ -12,12 +12,11 @@ class Menu extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           UserAccountsDrawerHeader(
-            accountEmail: Text("consinha_amarelo@email.com"),
+            accountEmail: Text("corsinha_amarelo@email.com"),
             accountName: Text("Mc Champinho"),
             currentAccountPicture: CircleAvatar(
               backgroundImage: NetworkImage(
-                'https://pbs.twimg.com/profile_images/2456322047/004XJm-y7WR-_-mc-champions-e-gu-do-vaz-de-lima-pode-vi_400x400.jpg'
-              ),
+                  'https://pbs.twimg.com/profile_images/2456322047/004XJm-y7WR-_-mc-champions-e-gu-do-vaz-de-lima-pode-vi_400x400.jpg'),
             ),
             decoration: const BoxDecoration(
               color: Color(0xFF0C5DBE),

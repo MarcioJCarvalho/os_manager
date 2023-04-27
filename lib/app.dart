@@ -6,6 +6,7 @@ import 'package:os_manager/pages/equipamento/lista.dart';
 import 'package:os_manager/pages/home/home.dart';
 import 'package:os_manager/pages/login.dart';
 import 'package:os_manager/pages/ocorrencia/lista.dart';
+import 'package:os_manager/pages/os/cadastro.dart';
 import 'package:os_manager/pages/os/lista.dart';
 import 'package:os_manager/pages/splash.dart';
 import 'package:os_manager/pages/tecnico/lista.dart';
@@ -18,9 +19,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
-          statusBarColor: primaryColor,
-          systemNavigationBarColor: primaryColor,
-        ),
+        statusBarColor: primaryColor,
+        systemNavigationBarColor: primaryColor,
+      ),
     );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -31,6 +32,7 @@ class App extends StatelessWidget {
         "home": (context) => const Home(),
         "login": (context) => const Login(),
         "osLista": (context) => const OsLista(),
+        "osCadastro": (context) => const Cadastro(),
         "tecnicoLista": (context) => const TecnicoLista(),
         "clienteLista": (context) => const ClienteLista(),
         "colaboradorLista": (context) => const ColaboradorLista(),
