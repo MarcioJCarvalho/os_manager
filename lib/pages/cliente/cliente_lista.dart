@@ -1,4 +1,3 @@
-import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:os_manager/menu.dart';
@@ -29,9 +28,9 @@ class ClienteLista extends StatelessWidget {
                       child: SizedBox(
                           width: 20,
                           child: Badge(
-                            showBadge: true,
-                            badgeColor: dangerColor,
-                            badgeContent: const Text(
+                            isLabelVisible: true,
+                            backgroundColor: dangerColor,
+                            label: const Text(
                               '3',
                               style: TextStyle(color: Colors.white),
                             ),

@@ -3,7 +3,6 @@ import 'package:line_icons/line_icons.dart';
 import 'package:os_manager/menu.dart';
 import 'package:os_manager/pages/home/home_content.dart';
 import 'package:os_manager/utils/colors.dart';
-import 'package:badges/badges.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -30,9 +29,9 @@ class Home extends StatelessWidget {
                       child: SizedBox(
                           width: 20,
                           child: Badge(
-                            showBadge: true,
-                            badgeColor: dangerColor,
-                            badgeContent: const Text(
+                            isLabelVisible: true,
+                            backgroundColor: dangerColor,
+                            label: const Text(
                               '3',
                               style: TextStyle(color: Colors.white),
                             ),
