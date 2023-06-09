@@ -8,6 +8,19 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      leading: Container(
+        padding: const EdgeInsets.only(
+            left: 20,),
+        child: GestureDetector(
+          onTap:  () => Scaffold.of(context).openDrawer(),
+          child: const CircleAvatar(
+          minRadius: 10,
+          maxRadius: 20,
+          backgroundImage: NetworkImage(
+                'https://pbs.twimg.com/profile_images/2456322047/004XJm-y7WR-_-mc-champions-e-gu-do-vaz-de-lima-pode-vi_400x400.jpg'),
+          ),
+        ),
+      ),
       centerTitle: true,
       backgroundColor: primaryColor,
       // logo
@@ -18,7 +31,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
           right: 20,
         ),
         child: Stack(
-          children: [
+          children: <Widget>[
             Center(
               child: SizedBox(
                   width: 20,
@@ -41,5 +54,5 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
   }
   
   @override
-  Size get preferredSize => const Size.fromHeight(50.0);
+  Size get preferredSize => const Size.fromHeight(60.0);
 }

@@ -21,9 +21,9 @@ class _HomeState extends State<Home> {
       appBar: const MyAppBar(),
       drawer: const Menu(),
       body: Container(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(10),
         child: FutureBuilder(
-          future: listarTodos(),
+          future: listarTodosPorIdUsuario(),
           builder: (context, AsyncSnapshot<List<OSDTO>> lista) {
             if (!lista.hasData) return const CircularProgressIndicator();
             if (lista.data == null) {
@@ -59,14 +59,16 @@ class _HomeState extends State<Home> {
 
   Widget criarItemLista(BuildContext context, OSDTO os) {
     return CardOS(
-      cliente: os.nomeCliente,
-      data: os.telefoneCliente,
-      endereco: os.enderecoCliente,
+      cliente: os.clienteDTO.nome,
+      telefone: os.clienteDTO.telefone,
+      endereco: os.clienteDTO.endereco,
+      horario: os.horario,
+      data: os.data,
     );
   }
   
-  Future<List<OSDTO>> listarTodos() {
+  Future<List<OSDTO>> listarTodosPorIdUsuario() {
     setState(() {});
-    return osDaoImpl.listarTodos();
+    return osDaoImpl.listarTodosPorIdUsuario(1);
   }
 }

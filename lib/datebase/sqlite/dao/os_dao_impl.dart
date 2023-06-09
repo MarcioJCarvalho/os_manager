@@ -5,77 +5,50 @@ import 'package:sqflite/sqflite.dart';
 
 class OSDAOImpl implements OSInterface {
   @override
-  Future<OSDTO> buscarPorID(int id) async {
+  Future<OSDTO> buscarPorID(dynamic id) async {
     Database db = await Conexao.criar();
     List<Map> maps = await db.query('os', where: 'id = ?', whereArgs: [id]);
     if (maps.isEmpty) {
       throw Exception('Não foi encontrado registro com este id');
     }
     Map<dynamic, dynamic> resultado = maps.first;
-    return converterOS(resultado);
-  }
-
-  @override
-  Future<bool> deletar(id) async {
-    Database db = await Conexao.criar();
-    var sql = 'DELETE FROM os WHERE id = ?';
-    int linhasAfetas = await db.rawDelete(sql, [id]);
-    return linhasAfetas > 0;
-  }
-
-  @override
-  Future<List<OSDTO>> listarTodos() async {
-    Database db = await Conexao.criar();
-    List<OSDTO> lista = (await db.query('os')).map<OSDTO>(converterOS).toList();
-    return lista;
-  }
-
-  @override
-  Future<OSDTO> salvar(OSDTO os) async {
-    Database db = await Conexao.criar();
-    String sql;
-    if (os.id == null) {
-      sql =
-          'INSERT INTO os (nomeCliente, telefoneCliente, emailCliente, enderecoCliente) VALUES (?,?,?,?)';
-      int id = await db.rawInsert(sql, [
-        os.nomeCliente,
-        os.telefoneCliente,
-        os.emailCliente,
-        os.enderecoCliente
-      ]);
-      os = OSDTO(
-          id: id,
-          nomeCliente: os.nomeCliente,
-          telefoneCliente: os.telefoneCliente,
-          emailCliente: os.emailCliente,
-          enderecoCliente: os.enderecoCliente);
-    } else {
-      sql =
-          'UPDATE os SET nomeCliente = ?, telefoneCliente = ?, emailCliente = ?, enderecoCliente = ? WHERE id = ?';
-      db.rawUpdate(sql, [
-        os.nomeCliente,
-        os.telefoneCliente,
-        os.emailCliente,
-        os.enderecoCliente,
-        os.id
-      ]);
-    }
-    return os;
+    return OSDTO.toDTO(resultado);
   }
 
   @override
   Future<List<OSDTO>> listarTodosPorIdUsuario(id) async {
     Database db = await Conexao.criar();
-    List<OSDTO> lista = (await db.query('os')).map<OSDTO>(converterOS).toList();
-    return lista;
+    List<Map<dynamic,dynamic>> mapOsList = await db.query('os', where: 'usuario_id = ?', whereArgs: [id]);
+    List<OSDTO> osList = [];
+    for (var mapOs in mapOsList) {
+      var os = await OSDTO.toDTO(mapOs);
+      osList.add(os);
+    }
+    return osList;
+  }
+  
+  @override
+  Future<bool> excluir(id) async {
+    Database db = await Conexao.criar();
+    var sql = 'DELETE FROM os WHERE id = ?';
+    int linhasAfetas = await db.rawDelete(sql, [id]);
+    return linhasAfetas > 0;
+  }
+  
+  @override
+  Future salvar(osdto) async {
+    Database db = await Conexao.criar();
+    String sql;
+    sql = 'UPDATE os SET nomeCliente = ?, telefoneCliente = ?, emailCliente = ?, enderecoCliente = ? WHERE id = ?';
+      db.rawUpdate(sql, [
+        osdto.clienteDTO.id,
+        osdto.id]);
+    return osdto;
   }
 
-  OSDTO converterOS(Map<dynamic, dynamic> resultado) {
-    return OSDTO(
-        id: resultado['id'],
-        nomeCliente: resultado['nomeCliente'],
-        telefoneCliente: resultado['telefoneCliente'],
-        emailCliente: resultado['emailCliente'],
-        enderecoCliente: resultado['enderecoCliente']);
+  @override
+  Future<List> buscarTodos() async {
+    // TODO: implement buscarPorID
+    throw UnimplementedError();
   }
 }

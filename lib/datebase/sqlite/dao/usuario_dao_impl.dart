@@ -1,29 +1,27 @@
-import 'package:os_manager/dto/usuatio_dto.dart';
 import 'package:os_manager/interface/usuario_interface.dart';
 
 class UsuarioDAOImpl implements UsuarioInterface{
   @override
-  Future<UsuarioDTO> buscarPorID(int id) {
+  Future buscarPorID(id) {
     // TODO: implement buscarPorID
     throw UnimplementedError();
   }
 
   @override
-  Future<bool> deletar(id) {
-    // TODO: implement deletar
+  Future<List> buscarTodos() {
+    // TODO: implement buscarTodos
     throw UnimplementedError();
   }
 
   @override
-  Future<List<UsuarioDTO>> listarTodos() {
-    // TODO: implement listarTodos
+  Future<bool> excluir(id) {
+    // TODO: implement excluir
     throw UnimplementedError();
   }
 
   @override
-  Future<UsuarioDTO> salvar(UsuarioDTO usuarioDTO) {
+  Future salvar(object) {
     // TODO: implement salvar
     throw UnimplementedError();
   }
-
 }

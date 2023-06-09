@@ -24,4 +24,12 @@ class ClienteDTO{
     ''';
   }
 
+  static toDTO(Map<dynamic, dynamic> cliente){
+    return ClienteDTO(
+      nome: cliente['nome'], 
+      email: cliente['email'], 
+      telefone: cliente['telefone'], 
+      endereco: cliente['endereco'],
+    ); 
+  }
 }

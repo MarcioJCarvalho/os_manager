@@ -1,25 +1,47 @@
+import 'package:os_manager/datebase/sqlite/dao/cliente_dao_impl.dart';
+import 'package:os_manager/dto/cliente_dto.dart';
+
 class OSDTO {
   final dynamic id;
-  final String nomeCliente;
-  final String telefoneCliente;
-  final String emailCliente;
-  final String enderecoCliente;
+  final String horario;
+  final String data;
+  final ClienteDTO clienteDTO;
 
-  OSDTO(
-      {this.id,
-      required this.nomeCliente,
-      required this.telefoneCliente,
-      required this.emailCliente,
-      required this.enderecoCliente});
+  OSDTO({
+    this.id
+    ,required this.horario
+    ,required this.data
+    ,required this.clienteDTO
+  });
 
   @override
   String toString() {
     return '''
       $id
-      $nomeCliente
-      $telefoneCliente
-      $emailCliente
-      $enderecoCliente
+      $horario
+      $data
     ''';
   }
+
+  static Future<OSDTO> toDTO(Map<dynamic, dynamic> os) async {
+    ClienteDTO cliente = await ClienteDAOImpl().buscarPorID(os['cliente_id']);
+    return OSDTO(
+      id: os['id'],
+      horario: os['horario'],
+      data: os['data'],
+      clienteDTO: cliente,
+    );
+  }
+
+  // static List<OSDTO> toList(List<dynamic> listaOS) {
+  //   List<OSDTO> osDTOList = [];
+  //   for (LinkedHashMap resultado in listaOS) {
+  //     OSDTO osdto = OSDTO(
+  //       id: resultado['id'],
+  //       // clienteDTO: resultado['clienteDTO'],
+  //     );
+  //     osDTOList.add(osdto);
+  //   }
+  //   return osDTOList;
+  // }
 }

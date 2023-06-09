@@ -1,9 +1,6 @@
 import 'package:os_manager/dto/os_dto.dart';
+import 'package:os_manager/utils/generic_dao.dart';
 
-abstract class OSInterface {
-  Future<OSDTO> buscarPorID(int id);
-  Future<List<OSDTO>> listarTodos();
-  Future<bool> deletar(dynamic id);
-  Future<OSDTO> salvar(OSDTO os);
+abstract class OSInterface extends GenericDAO{
   Future<List<OSDTO>> listarTodosPorIdUsuario(dynamic id);
 }
