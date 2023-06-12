@@ -38,10 +38,11 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
                   child: Badge(
                     isLabelVisible: true,
                     backgroundColor: dangerColor,
-                    label: const Text(
-                      '3',
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    smallSize: 8,
+                    // label: const Text(
+                    //   '3',
+                    //   style: TextStyle(color: Colors.white),
+                    // ),
                     child: const Icon(
                       LineIcons.bell,
                     ),

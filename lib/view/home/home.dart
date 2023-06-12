@@ -23,10 +23,10 @@ class _HomeState extends State<Home> {
       body: Container(
         padding: const EdgeInsets.all(10),
         child: FutureBuilder(
-          future: listarTodosPorIdUsuario(),
+          future: listarTodosPorIdUsuario(1),
           builder: (context, AsyncSnapshot<List<OSDTO>> lista) {
             if (!lista.hasData) return const CircularProgressIndicator();
-            if (lista.data == null) {
+            if (lista.data!.isEmpty) {
               return const Text('Não há ordens de serviço...');
             }
             List<OSDTO> listaOS = lista.data!;
@@ -67,8 +67,8 @@ class _HomeState extends State<Home> {
     );
   }
   
-  Future<List<OSDTO>> listarTodosPorIdUsuario() {
+  Future<List<OSDTO>> listarTodosPorIdUsuario(dynamic usuarioId){
     setState(() {});
-    return osDaoImpl.listarTodosPorIdUsuario(1);
+    return osDaoImpl.listarTodosPorIdUsuario(usuarioId);
   }
 }

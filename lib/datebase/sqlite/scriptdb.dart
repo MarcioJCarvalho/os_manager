@@ -4,6 +4,7 @@ const criarTabelas = [
     id INTEGER NOT NULL PRIMARY KEY
     ,email VARCHAR(150) NOT NULL
     ,senha VARCHAR(20) NOT NULL 
+    ,nome VARCHAR(150) NOT NULL
   )
 ''',
 '''
@@ -42,12 +43,12 @@ INSERT INTO cliente (nome, telefone, email, endereco)
 VALUES ('Hortência','(11) 9 9562-3356','hortencia@email.com','Rua Três, nº 20, Paranavaí - PR')
 ''',
 '''
-INSERT INTO usuario (email, senha)
-VALUES ('admin','admin')
+INSERT INTO usuario (email, senha, nome)
+VALUES ('admin','admin', 'Marcio Carvalho')
 ''',
 '''
-INSERT INTO usuario (email, senha)
-VALUES ('admin2','admin2')
+INSERT INTO usuario (email, senha, nome)
+VALUES ('admin2','admin2', 'Usuário Dois')
 ''',
 '''
 INSERT INTO os (horario, data, cliente_id, usuario_id)
