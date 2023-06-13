@@ -18,11 +18,11 @@ class UsuarioDAOImpl implements UsuarioInterface{
   @override
   Future<UsuarioDTO> auth(String email, String senha) async {
     Database db = await Conexao.criar();
-    var reult = await db.rawQuery("SELECT * FROM usuario WHERE email = '$email' and senha = '$senha'");
-    if (reult.isEmpty) {
+    var result = await db.rawQuery("SELECT * FROM usuario WHERE email = '$email' and senha = '$senha'");
+    if (result.isEmpty) {
       throw Exception('Usuário ou senha incorreto');
     }
-    Map<dynamic, dynamic> usuario = reult.first;
+    Map<dynamic, dynamic> usuario = result.first;
     var usr = UsuarioDTO.toDTO(usuario);
     if(usr != null){
       print(usr.id);

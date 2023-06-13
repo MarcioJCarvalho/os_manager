@@ -20,10 +20,10 @@ class OSDAOImpl implements OSInterface {
     Database db = await Conexao.criar();
     List<Map<dynamic,dynamic>> mapOsList = await db.query('os', where: 'usuario_id = ?', whereArgs: [id]);
     List<OSDTO> osList = [];
-    for (var mapOs in mapOsList) {
-      var os = await OSDTO.toDTO(mapOs);
-      osList.add(os);
-    }
+    // for (var mapOs in mapOsList) {
+    //   var os = await OSDTO.toDTO(mapOs);
+    //   osList.add(os);
+    // }
     return osList;
   }
   

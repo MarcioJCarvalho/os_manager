@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:os_manager/utils/app_theme.dart';
 import 'package:os_manager/view/auto_cadastro/auto_cadastro.dart';
 import 'package:os_manager/view/home/home.dart';
 import 'package:os_manager/view/login/login.dart';
@@ -19,7 +20,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'OS Manager',
-      theme: ThemeData(primarySwatch: blueSwatch),
+      theme: MyAppTheme().themeData,
       routes: {
         '/': (context) => const Splash(),
         'home': (context) => const Home(),

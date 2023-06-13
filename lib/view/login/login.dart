@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:os_manager/datebase/sqlite/dao/usuario_dao_impl.dart';
+import 'package:os_manager/dto/usuatio_dto.dart';
 import 'package:os_manager/interface/usuario_interface.dart';
 import 'package:os_manager/utils/rotas.dart';
 import 'package:os_manager/view/home/home.dart';
@@ -35,6 +36,7 @@ class _LoginState extends State<Login> {
                 const SizedBox(height: 25),
                 campoSenha,
                 const SizedBox(height: 25),
+                Text("Foddase", style: Theme.of(context).textTheme.labelSmall),
                 botao(context),
               ],
             ),
@@ -48,11 +50,11 @@ class _LoginState extends State<Login> {
     return Botao(
       context: context,
       nome: 'ENTRAR',
-      acao: () {
+      acao: () async {
         var formState = formKey.currentState;
         if (formState != null && formState.validate()) {
-          // usuarioDAOImpl.auth('admin', 'admin');
-          Navigator.pushNamed(context, Rotas.HOME);
+          UsuarioDTO usuarioDTO = await usuarioDAOImpl.auth('admin', 'admin');
+          Navigator.pushNamed(context, Rotas.HOME, arguments: usuarioDTO);
         }
       },
     );

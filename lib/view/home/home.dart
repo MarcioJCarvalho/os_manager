@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:os_manager/datebase/sqlite/dao/os_dao_impl.dart';
 import 'package:os_manager/dto/os_dto.dart';
+import 'package:os_manager/dto/usuatio_dto.dart';
 import 'package:os_manager/interface/os_interface.dart';
 import 'package:os_manager/view/widgets/card_os.dart';
 import 'package:os_manager/view/widgets/menu.dart';
@@ -15,19 +16,23 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final OSInterface osDaoImpl = OSDAOImpl();
+
   @override
   Widget build(BuildContext context) {
+    late UsuarioDTO usuarioDTO;
+    usuarioDTO = ModalRoute.of(context)!.settings.arguments as UsuarioDTO;
+
     return Scaffold(
       appBar: const MyAppBar(),
       drawer: const Menu(),
       body: Container(
         padding: const EdgeInsets.all(10),
         child: FutureBuilder(
-          future: listarTodosPorIdUsuario(1),
+          future: listarTodosPorIdUsuario(usuarioDTO.id),
           builder: (context, AsyncSnapshot<List<OSDTO>> lista) {
-            if (!lista.hasData) return const CircularProgressIndicator();
+            if (lista.connectionState == ConnectionState.waiting) return const CircularProgressIndicator();
             if (lista.data!.isEmpty) {
-              return const Text('Não há ordens de serviço...');
+              return const Center(child: Text('Não há ordens de serviço...'));
             }
             List<OSDTO> listaOS = lista.data!;
             return ListView.builder(
