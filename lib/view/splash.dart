@@ -4,7 +4,6 @@ import 'package:lottie/lottie.dart';
 import 'package:os_manager/utils/colors.dart';
 import 'package:os_manager/view/login/login.dart';
 
-
 class Splash extends StatelessWidget {
   const Splash({Key? key}) : super(key: key);
   @override

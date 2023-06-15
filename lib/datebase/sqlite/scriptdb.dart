@@ -44,11 +44,11 @@ VALUES ('Hortência','(11) 9 9562-3356','hortencia@email.com','Rua Três, nº 20
 ''',
 '''
 INSERT INTO usuario (email, senha, nome)
-VALUES ('admin','admin', 'Marcio Carvalho')
+VALUES ('marciojosedecarvalho@gmail.com','@2F34d20be2', 'Marcio Carvalho')
 ''',
 '''
 INSERT INTO usuario (email, senha, nome)
-VALUES ('admin2','admin2', 'Usuário Dois')
+VALUES ('admin@teste.com','admin', 'Usuário Dois')
 ''',
 '''
 INSERT INTO os (horario, data, cliente_id, usuario_id)

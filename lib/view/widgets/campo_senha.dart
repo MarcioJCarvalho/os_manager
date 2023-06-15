@@ -5,7 +5,7 @@ import 'package:os_manager/utils/validator_utils.dart';
 class CampoSenha extends StatefulWidget {
   final TextEditingController senhaController;
   const CampoSenha({Key? key, required TextEditingController controller}) : senhaController = controller, super(key: key);
-
+  
   @override
   State<CampoSenha> createState() => _CampoSenhaState();
 }

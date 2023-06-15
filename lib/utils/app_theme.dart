@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class MyAppTheme {
@@ -7,27 +5,27 @@ class MyAppTheme {
 
   ThemeData get themeData {
     TextTheme txtTheme = const TextTheme(
-      displayLarge: TextStyle(backgroundColor: Colors.red, fontSize: 500),
-      displayMedium: TextStyle(backgroundColor: Colors.red, fontSize: 500),
-      titleMedium: TextStyle(backgroundColor: Colors.red, fontSize: 500),
-      bodyLarge: TextStyle(fontSize: 20),
-      bodyMedium: TextStyle(backgroundColor: Colors.red, fontSize: 500),
-      bodySmall: TextStyle(backgroundColor: Colors.red, fontSize: 500),
-      labelLarge: TextStyle(color: Colors.white, fontSize: 50, backgroundColor: Colors.red),
-      labelMedium: TextStyle(color: Colors.white, fontSize: 40, backgroundColor: Colors.red),
-      labelSmall: TextStyle(color: Colors.white, fontSize: 25, backgroundColor: Colors.red),
+      displayLarge: TextStyle(color: Colors.black87, fontSize: 18),
+      displayMedium: TextStyle(color: Colors.black87, fontSize: 16),
+      titleMedium: TextStyle(color: Colors.black87, fontSize: 14),
+      bodyLarge: TextStyle(color: Colors.black87, fontSize: 18),
+      bodyMedium: TextStyle(color: Colors.black87, fontSize: 16),
+      bodySmall: TextStyle(color: Colors.black87, fontSize: 14),
+      labelLarge: TextStyle(color: Colors.black87, fontSize: 18),
+      labelMedium: TextStyle(color: Colors.black87, fontSize: 16),
+      labelSmall: TextStyle(color: Colors.black87, fontSize: 14),
     );
     ColorScheme colorScheme = ColorScheme(
         brightness: isDark == true ? Brightness.dark : Brightness.light,
         primary: isDark == true ? Colors.black : Colors.white,
         secondary: isDark == true ? Colors.black : Colors.red,
-        background: isDark == true ? Colors.black : Colors.blue,
-        surface: isDark == true ? Colors.black : Colors.blue,
+        background: isDark == true ? Colors.white10 : Colors.purpleAccent,
+        surface: isDark == true ? Colors.black : Colors.blue.shade300,
         onBackground: isDark == true ? Colors.black : Colors.white,
         onSurface: isDark == true ? Colors.black : Colors.white,
-        onError: Colors.white,
-        onPrimary: Colors.white,
-        onSecondary: Colors.white,
+        onError: Colors.green,
+        onPrimary: Colors.green,
+        onSecondary: Colors.green,
         error: Colors.red.shade400);
 
     return ThemeData.from(textTheme: txtTheme, colorScheme: colorScheme, useMaterial3: true);
