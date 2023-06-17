@@ -30,7 +30,9 @@ class _HomeState extends State<Home> {
         child: FutureBuilder(
           future: listarTodosPorIdUsuario(usuarioDTO.id),
           builder: (context, AsyncSnapshot<List<OSDTO>> lista) {
-            if (lista.connectionState == ConnectionState.waiting) return const CircularProgressIndicator();
+            if (lista.connectionState == ConnectionState.waiting) {
+              return const CircularProgressIndicator();
+            }
             if (lista.data!.isEmpty) {
               return const Center(child: Text('Não há ordens de serviço...'));
             }
@@ -45,21 +47,21 @@ class _HomeState extends State<Home> {
           },
         ),
       ),
-        // Row(
-        //     mainAxisAlignment: MainAxisAlignment.start,
-        //     children: [
-        //       Padding(padding: const EdgeInsets.all(8)),
-        //       Text(
-        //         "Ordens de Serviço",
-        //         style: TextStyle(
-        //           fontSize: 16,
-        //           fontFamily: 'Montserrat',
-        //           fontWeight: FontWeight.bold,
-        //         ),
-        //       ),
-        //     ],
-        //   ),
-      );
+      // Row(
+      //     mainAxisAlignment: MainAxisAlignment.start,
+      //     children: [
+      //       Padding(padding: const EdgeInsets.all(8)),
+      //       Text(
+      //         "Ordens de Serviço",
+      //         style: TextStyle(
+      //           fontSize: 16,
+      //           fontFamily: 'Montserrat',
+      //           fontWeight: FontWeight.bold,
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+    );
   }
 
   Widget criarItemLista(BuildContext context, OSDTO os) {
@@ -71,8 +73,8 @@ class _HomeState extends State<Home> {
       data: os.data,
     );
   }
-  
-  Future<List<OSDTO>> listarTodosPorIdUsuario(dynamic usuarioId){
+
+  Future<List<OSDTO>> listarTodosPorIdUsuario(dynamic usuarioId) {
     setState(() {});
     return osDaoImpl.listarTodosPorIdUsuario(usuarioId);
   }

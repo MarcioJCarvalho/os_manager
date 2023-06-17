@@ -18,15 +18,16 @@ class OSDAOImpl implements OSInterface {
   @override
   Future<List<OSDTO>> listarTodosPorIdUsuario(id) async {
     Database db = await Conexao.criar();
-    List<Map<dynamic,dynamic>> mapOsList = await db.query('os', where: 'usuario_id = ?', whereArgs: [id]);
+    List<Map<dynamic, dynamic>> mapOsList =
+        await db.query('os', where: 'usuario_id = ?', whereArgs: [id]);
     List<OSDTO> osList = [];
-    // for (var mapOs in mapOsList) {
-    //   var os = await OSDTO.toDTO(mapOs);
-    //   osList.add(os);
-    // }
+    for (var mapOs in mapOsList) {
+      var os = await OSDTO.toDTO(mapOs);
+      osList.add(os);
+    }
     return osList;
   }
-  
+
   @override
   Future<bool> excluir(id) async {
     Database db = await Conexao.criar();
@@ -34,15 +35,14 @@ class OSDAOImpl implements OSInterface {
     int linhasAfetas = await db.rawDelete(sql, [id]);
     return linhasAfetas > 0;
   }
-  
+
   @override
   Future salvar(osdto) async {
     Database db = await Conexao.criar();
     String sql;
-    sql = 'UPDATE os SET nomeCliente = ?, telefoneCliente = ?, emailCliente = ?, enderecoCliente = ? WHERE id = ?';
-      db.rawUpdate(sql, [
-        osdto.clienteDTO.id,
-        osdto.id]);
+    sql =
+        'UPDATE os SET nomeCliente = ?, telefoneCliente = ?, emailCliente = ?, enderecoCliente = ? WHERE id = ?';
+    db.rawUpdate(sql, [osdto.clienteDTO.id, osdto.id]);
     return osdto;
   }
 

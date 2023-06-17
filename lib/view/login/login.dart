@@ -51,7 +51,8 @@ class _LoginState extends State<Login> {
       acao: () async {
         var formState = formKey.currentState;
         if (formState != null && formState.validate()) {
-          UsuarioDTO usuarioDTO = await usuarioDAOImpl.auth(campoEmail.emailController.text, campoSenha.senhaController.text);
+          UsuarioDTO usuarioDTO = await usuarioDAOImpl.auth(
+              campoEmail.emailController.text, campoSenha.senhaController.text);
           Navigator.pushNamed(context, Rotas.HOME, arguments: usuarioDTO);
         }
       },

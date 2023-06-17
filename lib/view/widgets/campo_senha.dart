@@ -4,20 +4,21 @@ import 'package:os_manager/utils/validator_utils.dart';
 
 class CampoSenha extends StatefulWidget {
   final TextEditingController senhaController;
-  const CampoSenha({Key? key, required TextEditingController controller}) : senhaController = controller, super(key: key);
-  
+  const CampoSenha({Key? key, required TextEditingController controller})
+      : senhaController = controller,
+        super(key: key);
+
   @override
   State<CampoSenha> createState() => _CampoSenhaState();
 }
 
 class _CampoSenhaState extends State<CampoSenha> {
   bool hide = true;
-  
-  get senhaController => null;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: senhaController,
+      controller: widget.senhaController,
       obscureText: hide,
       keyboardType: TextInputType.visiblePassword,
       style: const TextStyle(fontSize: 18),
@@ -27,16 +28,15 @@ class _CampoSenhaState extends State<CampoSenha> {
         hintText: "Sua senha",
         border: const OutlineInputBorder(),
         suffixIcon: GestureDetector(
-          onTap: (){
-            hide = !hide; 
+          onTap: () {
+            hide = !hide;
             setState(() {});
           },
-          child: Icon(
-            hide ? LineIcons.eyeSlash : LineIcons.eye, color: Colors.grey
-          ),
+          child: Icon(hide ? LineIcons.eyeSlash : LineIcons.eye,
+              color: Colors.grey),
         ),
       ),
-      validator: (value){
+      validator: (value) {
         String? erro = ValidatorUtils.isEmpty(value);
         return erro;
       },
