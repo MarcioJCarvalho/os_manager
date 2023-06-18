@@ -2,6 +2,7 @@
 class Rotas {
   static const SPLASH = '/';
   static const LOGIN = 'login';
-  static const AUTO_CADASTRO = 'auto_cadastro';
   static const HOME = 'home';
+  static const EQUIPAMENTO_LISTA = 'equipamento_lista';
+  static const EQUIPAMENTO_CADASTRO = 'equipamento_cadastro';
 }

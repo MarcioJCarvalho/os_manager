@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:os_manager/utils/app_theme.dart';
-import 'package:os_manager/view/auto_cadastro/auto_cadastro.dart';
+import 'package:os_manager/view/equipamento/cadastro/equipamento_cadastro.dart';
+import 'package:os_manager/view/equipamento/lista/equipamento_lista.dart';
 import 'package:os_manager/view/home/home.dart';
 import 'package:os_manager/view/login/login.dart';
 import 'package:os_manager/view/splash.dart';
@@ -25,7 +26,8 @@ class App extends StatelessWidget {
         '/': (context) => const Splash(),
         'home': (context) => const Home(),
         'login': (context) => const Login(),
-        'auto_cadastro': (context) => const AutoCadastro(),
+        'equipamento_lista': (context) => const EquipamentoLista(),
+        'equipamento_cadastro': (context) => const EquipamentoCadastro(),
       },
     );
   }

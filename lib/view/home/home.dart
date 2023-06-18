@@ -31,7 +31,7 @@ class _HomeState extends State<Home> {
           future: listarTodosPorIdUsuario(usuarioDTO.id),
           builder: (context, AsyncSnapshot<List<OSDTO>> lista) {
             if (lista.connectionState == ConnectionState.waiting) {
-              return const CircularProgressIndicator();
+              return const Center(child: CircularProgressIndicator());
             }
             if (lista.data!.isEmpty) {
               return const Center(child: Text('Não há ordens de serviço...'));

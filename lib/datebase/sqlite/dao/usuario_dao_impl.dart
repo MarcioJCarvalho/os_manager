@@ -23,11 +23,8 @@ class UsuarioDAOImpl implements UsuarioInterface{
       throw Exception('Usuário ou senha incorreto');
     }
     Map<dynamic, dynamic> usuario = result.first;
-    var usr = UsuarioDTO.toDTO(usuario);
-    if(usr != null){
-      print(usr.id);
-    }
-    return usr;
+    var usuarioDTO = UsuarioDTO.toDTO(usuario);
+    return usuarioDTO;
   }
 
   @override

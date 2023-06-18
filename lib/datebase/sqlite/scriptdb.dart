@@ -27,6 +27,19 @@ const criarTabelas = [
     ,FOREIGN KEY (usuario_id) REFERENCES usuario (id) 
   )
 ''',
+'''
+ CREATE TABLE equipamento(
+    id INTEGER NOT NULL PRIMARY KEY
+    ,nome VARCHAR(250) NOT NULL
+  )
+''',
+'''
+ CREATE TABLE equipamento_usuario(
+    equipamento_id INTEGER
+    ,usuario_id INTEGER
+    ,PRIMARY KEY(equipamento_id, usuario_id)
+  )
+''',
 ];
 //array de inserções
 const inserirDados = [
@@ -65,5 +78,45 @@ VALUES ('9:00', '20/06/2023', 3, 1)
 '''
 INSERT INTO os (horario, data, cliente_id, usuario_id)
 VALUES ('10:00', '16/06/2023', 3, 2)
+''',
+'''
+INSERT INTO equipamento (nome)
+VALUES ('ONT PHYHOME AC1200 4 ANTENAS P20 DUAL BAND')
+''',
+'''
+INSERT INTO equipamento (nome)
+VALUES ('ONU XPON OPTICTIMES – ZX8101L – APC')
+''',
+'''
+INSERT INTO equipamento (nome)
+VALUES ('ESTICADOR CABO DROP TIPO CUNHA')
+''',
+'''
+INSERT INTO equipamento (nome)
+VALUES ('CABO DROP')
+''',
+'''
+INSERT INTO equipamento (nome)
+VALUES ('CAIXA CTO 1X8 VAZIA')
+''',
+'''
+INSERT INTO equipamento_usuario (equipamento_id, usuario_id)
+VALUES (1, 1)
+''',
+'''
+INSERT INTO equipamento_usuario (equipamento_id, usuario_id)
+VALUES (3, 1)
+''',
+'''
+INSERT INTO equipamento_usuario (equipamento_id, usuario_id)
+VALUES (5, 1)
+''',
+'''
+INSERT INTO equipamento_usuario (equipamento_id, usuario_id)
+VALUES (2, 2)
+''',
+'''
+INSERT INTO equipamento_usuario (equipamento_id, usuario_id)
+VALUES (4, 2)
 ''',
 ];
