@@ -7,12 +7,11 @@ class OSDTO {
   final String data;
   final ClienteDTO clienteDTO;
 
-  OSDTO({
-    this.id
-    ,required this.horario
-    ,required this.data
-    ,required this.clienteDTO
-  });
+  OSDTO(
+      {this.id,
+      required this.horario,
+      required this.data,
+      required this.clienteDTO});
 
   @override
   String toString() {
@@ -32,16 +31,4 @@ class OSDTO {
       clienteDTO: cliente,
     );
   }
-
-  // static List<OSDTO> toList(List<dynamic> listaOS) {
-  //   List<OSDTO> osDTOList = [];
-  //   for (LinkedHashMap resultado in listaOS) {
-  //     OSDTO osdto = OSDTO(
-  //       id: resultado['id'],
-  //       // clienteDTO: resultado['clienteDTO'],
-  //     );
-  //     osDTOList.add(osdto);
-  //   }
-  //   return osDTOList;
-  // }
 }

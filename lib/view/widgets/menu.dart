@@ -19,25 +19,37 @@ class Menu extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                   const CircleAvatar(
+                  const CircleAvatar(
                     radius: 50,
                     backgroundImage: NetworkImage(
                         'https://pbs.twimg.com/profile_images/2456322047/004XJm-y7WR-_-mc-champions-e-gu-do-vaz-de-lima-pode-vi_400x400.jpg'),
                   ),
-                  Text(
-                    usuarioDTO.nome,
-                    style: const TextStyle(
-                      fontSize: 14.0,
-                      color: Colors.black87,
-                    )
+                  Text(usuarioDTO.nome,
+                      style: const TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.black87,
+                      )),
+                  Text(usuarioDTO.email,
+                      style: const TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.black87,
+                      )),
+                  const Divider(
+                    thickness: 1,
+                    indent: 1,
+                    endIndent: 1,
+                    color: Colors.grey,
                   ),
-                  Text(
-                    usuarioDTO.email,
-                    style: const TextStyle(
-                      fontSize: 14.0,
-                      color: Colors.black87,
-                    )
-                  ),
+                  Text(usuarioDTO.provedorDTO.nome,
+                      style: const TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.black87,
+                      )),
+                  Text(usuarioDTO.provedorDTO.telefone,
+                      style: const TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.black87,
+                      )),
                 ],
               ),
             ),
