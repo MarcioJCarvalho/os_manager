@@ -8,6 +8,8 @@ class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     late UsuarioDTO usuarioDTO;
+    late String urlPadrao =
+        "https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2023/01/27/516249666-tiringa-reproducao-instagram-eutiringaoficial.jpg";
     usuarioDTO = ModalRoute.of(context)!.settings.arguments as UsuarioDTO;
     return Drawer(
       child: ListView(
@@ -19,10 +21,32 @@ class Menu extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const CircleAvatar(
+                  CircleAvatar(
                     radius: 50,
-                    backgroundImage: NetworkImage(
-                        'https://pbs.twimg.com/profile_images/2456322047/004XJm-y7WR-_-mc-champions-e-gu-do-vaz-de-lima-pode-vi_400x400.jpg'),
+                    backgroundImage:
+                        NetworkImage(usuarioDTO.urlPerfil ?? urlPadrao),
+                    child: Stack(
+                      children: [
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: CircleAvatar(
+                            radius: 19,
+                            backgroundColor:
+                                const Color.fromARGB(174, 255, 255, 255),
+                            child: IconButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, Rotas.PERFIL_USUARIO,
+                                      arguments: usuarioDTO);
+                                },
+                                icon: const Icon(
+                                  LineIcons.pen,
+                                  color: Colors.black,
+                                )),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   Text(usuarioDTO.nome,
                       style: const TextStyle(
@@ -35,10 +59,10 @@ class Menu extends StatelessWidget {
                         color: Colors.black87,
                       )),
                   const Divider(
-                    thickness: 1,
-                    indent: 1,
-                    endIndent: 1,
-                    color: Colors.grey,
+                    thickness: 0,
+                    indent: 0,
+                    endIndent: 0,
+                    color: Colors.white,
                   ),
                   Text(usuarioDTO.provedorDTO.nome,
                       style: const TextStyle(

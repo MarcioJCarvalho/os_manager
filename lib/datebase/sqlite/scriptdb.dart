@@ -12,6 +12,7 @@ const criarTabelas = [
     ,email VARCHAR(150) NOT NULL
     ,senha VARCHAR(20) NOT NULL 
     ,nome VARCHAR(150) NOT NULL
+    ,url_perfil VARCHAR(255)
     ,provedor_id INTEGER
     ,FOREIGN KEY (provedor_id) REFERENCES provedor (id)
   )
@@ -69,8 +70,8 @@ INSERT INTO provedor (nome, telefone)
 VALUES ('AGM Telecom','(44) 9 9199-9999')
 ''',
   '''
-INSERT INTO usuario (email, senha, nome, provedor_id)
-VALUES ('marciojosedecarvalho@gmail.com','@2F34d20be2', 'Marcio Carvalho', 1)
+INSERT INTO usuario (email, senha, nome, url_perfil, provedor_id)
+VALUES ('marciojosedecarvalho@gmail.com','@2F34d20be2', 'Marcio Carvalho', 'https://pbs.twimg.com/profile_images/2456322047/004XJm-y7WR-_-mc-champions-e-gu-do-vaz-de-lima-pode-vi_400x400.jpg', 1)
 ''',
   '''
 INSERT INTO usuario (email, senha, nome, provedor_id)

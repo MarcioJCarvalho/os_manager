@@ -6,10 +6,12 @@ class UsuarioDTO {
   final String email;
   final String senha;
   final String nome;
+  final String? urlPerfil;
   final ProvedorDTO provedorDTO;
 
   UsuarioDTO({
     this.id,
+    this.urlPerfil,
     required this.email,
     required this.senha,
     required this.nome,
@@ -23,6 +25,7 @@ class UsuarioDTO {
       $email,
       $senha,
       $nome,
+      $urlPerfil,
   ''';
   }
 
@@ -34,6 +37,7 @@ class UsuarioDTO {
       nome: usuario['nome'],
       email: usuario['email'],
       senha: usuario['senha'],
+      urlPerfil: usuario['url_perfil'],
       provedorDTO: provedor,
     );
   }

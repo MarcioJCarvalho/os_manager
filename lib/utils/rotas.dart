@@ -5,4 +5,5 @@ class Rotas {
   static const HOME = 'home';
   static const EQUIPAMENTO_LISTA = 'equipamento_lista';
   static const EQUIPAMENTO_CADASTRO = 'equipamento_cadastro';
+  static const PERFIL_USUARIO = 'perfil_usuario';
 }
