@@ -28,6 +28,15 @@ class UsuarioDAOImpl implements UsuarioInterface{
   }
 
   @override
+  Future salvar(object) async {
+    Database db = await Conexao.criar();
+    String sql;
+    sql = 'UPDATE usuario SET nome = ? WHERE id = ?';
+    await db.rawUpdate(sql, [object.nome, object.id]);
+    return object;
+  }
+
+  @override
   Future<List> buscarTodos() {
     // TODO: implement buscarTodos
     throw UnimplementedError();
@@ -39,9 +48,4 @@ class UsuarioDAOImpl implements UsuarioInterface{
     throw UnimplementedError();
   }
 
-  @override
-  Future salvar(object) {
-    // TODO: implement salvar
-    throw UnimplementedError();
-  }
 }

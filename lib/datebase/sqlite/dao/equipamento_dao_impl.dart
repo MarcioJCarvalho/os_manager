@@ -38,7 +38,7 @@ class EquipamentoDAOImpl implements EquipamentoInterface{
       );
     } else {
       sql = 'UPDATE equipamento SET nome = ? WHERE id = ?';
-      db.rawUpdate(sql, [equipamentoDTO.nome, equipamentoDTO.id]);
+      await db.rawUpdate(sql, [equipamentoDTO.nome, equipamentoDTO.id]);
     }
 
     return equipamentoDTO;
