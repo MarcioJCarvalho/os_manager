@@ -29,6 +29,7 @@ const criarTabelas = [
   '''
  CREATE TABLE os(
     id INTEGER NOT NULL PRIMARY KEY
+    ,status VARCHAR(10) NOT NULL
     ,horario VARCHAR(5) NOT NULL
     ,data VARCHAR(10) NOT NULL
     ,cliente_id INTEGER NOT NULL
@@ -78,20 +79,20 @@ INSERT INTO usuario (email, senha, nome, provedor_id)
 VALUES ('admin@teste.com','admin', 'Usuário Dois', 1)
 ''',
   '''
-INSERT INTO os (horario, data, cliente_id, usuario_id)
-VALUES ('8:30', '15/06/2023', 1, 1)
+INSERT INTO os (status, horario, data, cliente_id, usuario_id)
+VALUES ('ATIVO', '8:30', '15/06/2023', 1, 1)
 ''',
   '''
-INSERT INTO os (horario, data, cliente_id, usuario_id)
-VALUES ('13:30', '15/06/2023', 2, 1)
+INSERT INTO os (status, horario, data, cliente_id, usuario_id)
+VALUES ('ATIVO', 13:30', '15/06/2023', 2, 1)
 ''',
   '''
-INSERT INTO os (horario, data, cliente_id, usuario_id)
-VALUES ('9:00', '20/06/2023', 3, 1)
+INSERT INTO os (status, horario, data, cliente_id, usuario_id)
+VALUES ('ATIVO', 9:00', '20/06/2023', 3, 1)
 ''',
   '''
-INSERT INTO os (horario, data, cliente_id, usuario_id)
-VALUES ('10:00', '16/06/2023', 3, 2)
+INSERT INTO os (status, horario, data, cliente_id, usuario_id)
+VALUES ('ATIVO', 10:00', '16/06/2023', 3, 2)
 ''',
   '''
 INSERT INTO equipamento (nome)

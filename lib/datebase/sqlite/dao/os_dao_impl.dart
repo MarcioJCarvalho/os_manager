@@ -19,7 +19,7 @@ class OSDAOImpl implements OSInterface {
   Future<List<OSDTO>> listarTodosPorIdUsuario(id) async {
     Database db = await Conexao.criar();
     List<Map<dynamic, dynamic>> mapOsList =
-        await db.query('os', where: 'usuario_id = ?', whereArgs: [id]);
+        await db.rawQuery("SELECT * FROM os WHERE usuario_id = '$id' AND status = 'ATIVO'");
     List<OSDTO> osList = [];
     for (var mapOs in mapOsList) {
       var os = await OSDTO.toDTO(mapOs);
