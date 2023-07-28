@@ -3,6 +3,7 @@ import 'package:os_manager/datebase/sqlite/dao/os_dao_impl.dart';
 import 'package:os_manager/dto/os_dto.dart';
 import 'package:os_manager/dto/usuatio_dto.dart';
 import 'package:os_manager/interface/os_interface.dart';
+import 'package:os_manager/utils/rotas.dart';
 import 'package:os_manager/view/widgets/card_os.dart';
 import 'package:os_manager/view/widgets/menu.dart';
 import 'package:os_manager/view/widgets/my_app_bar.dart';
@@ -19,8 +20,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    late UsuarioDTO usuarioDTO;
-    usuarioDTO = ModalRoute.of(context)!.settings.arguments as UsuarioDTO;
+    late UsuarioDTO usuarioDTO = ModalRoute.of(context)!.settings.arguments as UsuarioDTO;
 
     return Scaffold(
       appBar: const MyAppBar(),
@@ -66,6 +66,7 @@ class _HomeState extends State<Home> {
 
   Widget criarItemLista(BuildContext context, OSDTO os) {
     return CardOS(
+      onPressed: () => Navigator.pushNamed(context, Rotas.DETALHES_OS, arguments: os),
       cliente: os.clienteDTO.nome,
       telefone: os.clienteDTO.telefone,
       endereco: os.clienteDTO.endereco,
