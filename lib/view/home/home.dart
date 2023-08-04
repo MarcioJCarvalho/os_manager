@@ -17,7 +17,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final OSInterface osDaoImpl = OSDAOImpl();
-
   @override
   Widget build(BuildContext context) {
     late UsuarioDTO usuarioDTO = ModalRoute.of(context)!.settings.arguments as UsuarioDTO;
@@ -66,7 +65,7 @@ class _HomeState extends State<Home> {
 
   Widget criarItemLista(BuildContext context, OSDTO os) {
     return CardOS(
-      onPressed: () => Navigator.pushNamed(context, Rotas.DETALHES_OS, arguments: os),
+      onPressed: () => Navigator.pushNamed(context, Rotas.DETALHES_OS, arguments: os).then((_) => setState(() {})),
       cliente: os.clienteDTO.nome,
       telefone: os.clienteDTO.telefone,
       endereco: os.clienteDTO.endereco,

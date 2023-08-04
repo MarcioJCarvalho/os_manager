@@ -52,7 +52,7 @@ class _EquipamentoCadastroState extends State<EquipamentoCadastro> {
         if (formState != null && formState.validate()) {
           var equipamento = preencher();
           EquipamentoInterface equipamentoDAOImpl = EquipamentoDAOImpl();
-          equipamentoDAOImpl.salvarPorUsuarioID(equipamento, usuarioDTO.id);
+          await equipamentoDAOImpl.salvarPorUsuarioID(equipamento, usuarioDTO.id);
           Navigator.pop(context);
         }
       },

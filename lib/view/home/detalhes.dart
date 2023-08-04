@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:os_manager/datebase/sqlite/dao/os_dao_impl.dart';
 import 'package:os_manager/dto/os_dto.dart';
+import 'package:os_manager/dto/usuatio_dto.dart';
+import 'package:os_manager/interface/os_interface.dart';
+import 'package:os_manager/utils/rotas.dart';
 import 'package:os_manager/view/widgets/botao.dart';
 
 class DetalhesOS extends StatelessWidget {
@@ -31,18 +35,18 @@ class DetalhesOS extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Text("Número Protocolo: $protocolo"),
               Text("Data do agendamento: $data"),
               Text("Horário agendado: $horario"),
-              SizedBox(height: 20),
-              Text("Dados do Cliente",
+              const SizedBox(height: 20),
+              const Text("Dados do Cliente",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               Text("Nome Cliente: $nome"),
               Text("Email: $email"),
               Text("Telefone: $telefone"),
               Text("Endereço: $endereco"),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               botao(context),
             ],
           ),
@@ -55,8 +59,21 @@ class DetalhesOS extends StatelessWidget {
     return Botao(
         context: context,
         nome: 'Concluir',
-        acao: () {
+        acao: () async {
+          OSInterface osDaoImpl = OSDAOImpl();
+          var os = preencher(context);
+          await osDaoImpl.salvar(os);
           Navigator.pop(context);
         });
+  }
+
+  OSDTO preencher(BuildContext context){
+    OSDTO os = ModalRoute.of(context)!.settings.arguments as OSDTO;
+    return OSDTO(
+        id: os.id,
+        status: 'CONCLUIDO',
+        horario: os.horario,
+        data: os.data,
+        clienteDTO: os.clienteDTO);
   }
 }

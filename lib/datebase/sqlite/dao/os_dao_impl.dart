@@ -41,8 +41,8 @@ class OSDAOImpl implements OSInterface {
     Database db = await Conexao.criar();
     String sql;
     sql =
-        'UPDATE os SET nomeCliente = ?, telefoneCliente = ?, emailCliente = ?, enderecoCliente = ? WHERE id = ?';
-    db.rawUpdate(sql, [osdto.clienteDTO.id, osdto.id]);
+        'UPDATE os SET status = ?, horario = ?, data = ? WHERE id = ?';
+    db.rawUpdate(sql, [osdto.status, osdto.horario, osdto.data, osdto.id]);
     return osdto;
   }
 
