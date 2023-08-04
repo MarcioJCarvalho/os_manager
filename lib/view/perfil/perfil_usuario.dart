@@ -3,7 +3,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:os_manager/datebase/sqlite/dao/usuario_dao_impl.dart';
 import 'package:os_manager/dto/usuatio_dto.dart';
+import 'package:os_manager/interface/usuario_interface.dart';
 
 class PerfilUsuario extends StatefulWidget {
   const PerfilUsuario({Key? key}) : super(key: key);
@@ -78,7 +80,6 @@ class _PerfilUsuarioState extends State<PerfilUsuario> {
                 20),
                 )
               ),
-        
               Row(
                 children: [
                   CircleAvatar(
@@ -123,6 +124,12 @@ class _PerfilUsuarioState extends State<PerfilUsuario> {
         imagemSelecionada = imagemTemporaria;
       });
     }
+  }
+
+  salvarFoto() async {
+    // UsuarioInterface usuarioDaoImpl = UsuarioDAOImpl();
+    // late UsuarioDTO usuarioDTO = ModalRoute.of(context)!.settings.arguments as UsuarioDTO;
+    // usuarioDTO.urlPerfil = base64Encode(arquivo.readAsBytesSync()), path: arquivo.path;
   }
 
 }

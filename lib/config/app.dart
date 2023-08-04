@@ -23,7 +23,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'OS Manager',
-      theme: MyAppTheme().themeData,
+      // theme: MyAppTheme().themeData,
       routes: {
         '/': (context) => const Splash(),
         'home': (context) => const Home(),
